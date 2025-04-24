@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computer-Kurse Mainz</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body class="light-mode">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Computer-Kurse Mainz</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#start">Start</a></li>
+      <li><a href="#bootcamp">Bootcamp</a></li>
+      <li><a href="#kurse">Kurse</a>
+        <ul class="dropdown">
+          <li><a href="#praesenz">Präsenz-Kurse</a></li>
+          <li><a href="#online">Online-Kurse</a></li>
+        </ul>
+      </li>
+      <li><a href="#mentor">Mentor</a></li>
+    </ul>
+    <button class="mode-toggle" onclick="toggleMode()">🌙</button>
+  </nav>
+
+  <!-- Startseite mit Video -->
+  <header class="hero" id="start">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-text">
+      <h1>Willkommen bei Computer-Kurse Mainz</h1>
+      <p>Dein Weg in die digitale Zukunft</p>
+    </div>
+  </header>
+
+  <!-- Bootcamp Section -->
+  <section id="bootcamp">
+    <h2>Intensiv-Bootcamp</h2>
+    <p>Lerne in kurzer Zeit die wichtigsten digitalen Skills.</p>
+  </section>
+
+  <!-- Kurse Section -->
+  <section id="kurse">
+    <h2>Unsere Kurse</h2>
+    <div id="praesenz">
+      <h3>Präsenz-Kurse</h3>
+      <p>Vor Ort in Mainz mit persönlicher Betreuung.</p>
+    </div>
+    <div id="online">
+      <h3>Online-Kurse</h3>
+      <p>Flexibles Lernen von überall aus.</p>
+    </div>
+  </section>
+
+  <!-- Mentor Section -->
+  <section id="mentor">
+    <h2>Dein Mentor</h2>
+    <p>Erfahrene Coaches begleiten dich auf deinem Weg.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Computer-Kurse Mainz. Alle Rechte vorbehalten.</p>
+  </footer>
+</body>
+</html>
