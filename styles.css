@@ -1,22 +1,24 @@
+/* === BASIC RESET === */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
 body {
-  background-color 0.3s, color 0.3s;
-  background: url('pattern-light.png'); /* leichte Textur */
-  background-size: cover;
+  font-family: monospace;
+  background-color: #f9f9f9;
+  color: #111;
+  transition: all 0.3s ease;
+}
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
-.dark-mode {
-  background: url('pattern-dark.png');
-  background-color: #111;
-  color: #eee;
-}
-
+/* === NAVBAR === */
 .navbar {
   position: sticky;
   top: 0;
@@ -65,10 +67,110 @@ body {
 }
 
 .mode-toggle {
-  font-size: 1.2rem;
   background: none;
   border: none;
+  padding: 0;
+  margin: 0;
   cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mode-square {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: #000;
+  transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+/* === DEFAULT LIGHT MODE === */
+section {
+  padding: 2rem;
+}
+footer {
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+button,
+input,
+textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* === DARK MODE: FULL TERMINAL STYLE === */
+body.dark-mode {
+  background-color: #000;
+  color: #39ff14;
+  font-family: 'Courier New', Courier, monospace;
+  background-image: none;
+}
+
+/* Terminal Links */
+body.dark-mode a {
+  color: #00ff99;
+  border-bottom: 1px dashed #00ff99;
+}
+body.dark-mode a:hover {
+  color: #39ff14;
+  border-color: #39ff14;
+}
+
+/* Terminal Navbar */
+body.dark-mode .navbar {
+  background-color: #0a0a0a;
+  border-bottom: 1px solid #00ff99;
+}
+body.dark-mode .navbar a {
+  color: #00ff99;
+}
+
+/* Toggle Square */
+body.dark-mode .mode-square {
+  background-color: #00ff99;
+  border: 1px solid #00ff99;
+}
+
+/* Terminal Sections */
+body.dark-mode section {
+  border-left: 3px solid #00ff99;
+  padding-left: 1rem;
+}
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #00ff99;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Terminal Buttons */
+body.dark-mode button,
+body.dark-mode .btn {
+  background-color: #000;
+  color: #00ff99;
+  border: 1px solid #00ff99;
+}
+body.dark-mode button:hover,
+body.dark-mode .btn:hover {
+  background-color: #00ff99;
+  color: #000;
+}
+
+/* Terminal Inputs */
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #000;
+  color: #00ff99;
+  border: 1px solid #00ff99;
 }
 
 .hero {
@@ -76,50 +178,44 @@ body {
   height: 100vh;
   overflow: hidden;
 }
-
 .bg-video {
+  position: absolute;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.3);
+}
+.hero-content {
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-.hero-text {
-  position: relative;
-  top: 40%;
-  text-align: center;
-  padding: 0 1rem;
-}
-
-section {
-  padding: 2rem 1rem;
-  max-width: 900px;
-  margin: auto;
-}
-
-footer {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: white;
   text-align: center;
   padding: 1rem;
-  background: #f0f0f0;
-  font-size: 0.9rem;
 }
 
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: white;
-    position: absolute;
-    right: 0;
-    top: 60px;
-    width: 100%;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
+/* Terminal Footer */
+body.dark-mode footer {
+  background-color: #0a0a0a;
+  border-top: 1px solid #00ff99;
+  color: #00ff99;
 }
 
+/* Cursor (optional) */
+.terminal-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 20px;
+  background: #39ff14;
+  margin-left: 5px;
+  animation: blink 1s step-start infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

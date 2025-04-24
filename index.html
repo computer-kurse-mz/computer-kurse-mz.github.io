@@ -10,31 +10,28 @@
 <body class="light-mode">
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="logo">Computer-Kurse Mainz</div>
-    <ul class="nav-links" id="navLinks">
+    <h1 class="navbar logo">Computer-Kurse Mainz</h1>
+    <ul class="nav-links">
       <li><a href="#start">Start</a></li>
       <li><a href="#bootcamp">Bootcamp</a></li>
-      <li><a href="#kurse">Kurse</a>
-        <ul class="dropdown">
-          <li><a href="#praesenz">Präsenz-Kurse</a></li>
-          <li><a href="#online">Online-Kurse</a></li>
-        </ul>
-      </li>
+      <li><a href="#kurse">Kurse</a></li>
       <li><a href="#mentor">Mentor</a></li>
     </ul>
-    <button class="mode-toggle" onclick="toggleMode()">🌙</button>
+    <button class="mode-toggle" onclick="toggleMode()">
+      <span class="mode-square"></span>
+    </button>
   </nav>
 
   <!-- Startseite mit Video -->
-  <header class="hero" id="start">
-    <video autoplay muted loop playsinline class="bg-video">
+    <section class="hero">
+    <video autoplay muted loop class="bg-video">
       <source src="assets/videos/background.mp4" type="video/mp4">
     </video>
-    <div class="hero-text">
-      <p><span style="background-color: white">Programmieren macht Spaß</span></h1>
-      <p><span style="background-color: white">... und ich zeige dir, warum! Egal, ob du in den <span style="font-weight: bolder;">Ferien</span> kreativ coden möchtest oder <span style="font-weight: bolder;">regelmäßig online oder offline</span> lernen willst, hier findest du den passenden Kurs. Außerdem biete ich <span style="font-weight: bolder;">kostenlose Aufklärungsstunden</span> für Schulklassen an, damit alle einen smarten Einstieg in die digitale Welt bekommen.</span></p>
+    <div class="hero-content">
+      <h1>Programmieren macht Spaß<span class="terminal-cursor"></span></h1>
+      <p>... und ich zeige dir, warum! Egal, ob du in den <span style="font-weight: bolder;">Ferien</span> kreativ coden möchtest oder <span style="font-weight: bolder;">regelmäßig online oder offline</span> lernen willst, hier findest du den passenden Kurs. Außerdem biete ich <span style="font-weight: bolder;">kostenlose Aufklärungsstunden</span> für Schulklassen an, damit alle einen smarten Einstieg in die digitale Welt bekommen.</p>
     </div>
-  </header>
+  </section>
 
   <!-- Bootcamp Section -->
   <section id="bootcamp">
