@@ -257,21 +257,28 @@ a {
   position: relative;
 }
 
-/* Kein Effekt beim Logo */
-a.logo::after {
-  display: none;
-}
-
-/* Hover-Wellenlinie mit Farbverlauf */
-a {
-  color: inherit;
+/* Logo-Link: Kein Hover-Effekt */
+.logo {
   text-decoration: none;
-  position: relative;
-  transition: text-shadow 0.3s ease;
+  position: static;
 }
 
-a:not(.logo):hover {
-  text-shadow: 0 0 6px currentColor;
+/* === Slide-In Background Highlight === */
+a:not(.logo)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: rgba(0, 255, 153, 0.2); /* oder eine passendere Farbe */
+  z-index: -1;
+  transition: width 0.4s ease;
+  border-radius: 4px;
+}
+
+a:not(.logo):hover::before {
+  width: 100%;
 }
 
 /* === Video Overlay === */
