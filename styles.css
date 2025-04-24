@@ -1,221 +1,72 @@
-/* === BASIC RESET === */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-body {
-  font-family: monospace;
-  background-color: #f9f9f9;
-  color: #111;
-  transition: all 0.3s ease;
-}
-a {
-  color: #0066cc;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computer-Kurse Mainz</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body class="light-mode">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Computer-Kurse Mainz</div>
+    <ul class="nav-links">
+      <li><a href="#start">Start</a></li>
+      <li><a href="#bootcamp">Bootcamp</a></li>
+      <li><a href="#kurse">Kurse</a></li>
+      <li><a href="#mentor">Mentor</a></li>
+    </ul>
+    <button class="mode-toggle" aria-label="Modus wechseln" aria-pressed="false">
+      <span class="mode-square"></span>
+    </button>
+  </nav>
 
-/* === NAVBAR === */
-.navbar {
-  position: sticky;
-  top: 0;
-  background-color: #ffffffcc;
-  backdrop-filter: blur(8px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.8rem 1rem;
-  z-index: 1000;
-}
+  <!-- Startseite mit Video -->
+  <section class="hero" id="start">
+    <video autoplay muted loop class="bg-video">
+      <source src="assets/videos/background.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+      <h1>Programmieren macht Spaß<span class="terminal-cursor"></span></h1>
+      <p>
+        ... und ich zeige dir, warum! Egal, ob du in den
+        <span class="bold">Ferien</span> kreativ coden möchtest oder
+        <span class="bold">regelmäßig online oder offline</span> lernen willst, hier findest du den passenden Kurs.
+        Außerdem biete ich <span class="bold">kostenlose Aufklärungsstunden</span> für Schulklassen an,
+        damit alle einen smarten Einstieg in die digitale Welt bekommen.
+      </p>
+    </div>
+  </section>
 
-.navbar .logo {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
+  <!-- Bootcamp Section -->
+  <section id="bootcamp">
+    <h2>Bootcamp</h2>
+    <p>Lerne in kurzer Zeit die wichtigsten digitalen Skills.</p>
+  </section>
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
+  <!-- Kurse Section -->
+  <section id="kurse">
+    <h2>Kurse</h2>
+    <div id="praesenz">
+      <h3>Präsenz-Kurse</h3>
+      <p>Vor Ort in Mainz mit persönlicher Betreuung.</p>
+    </div>
+    <div id="online">
+      <h3>Online-Kurse</h3>
+      <p>Flexibles Lernen von überall aus.</p>
+    </div>
+  </section>
 
-.nav-links li {
-  position: relative;
-}
+  <!-- Mentor Section -->
+  <section id="mentor">
+    <h2>Dein Mentor</h2>
+    <p>Erfahrene Coaches begleiten dich auf deinem Weg.</p>
+  </section>
 
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-.nav-links .dropdown {
-  display: none;
-  position: absolute;
-  top: 2rem;
-  left: 0;
-  background-color: white;
-  list-style: none;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.nav-links li:hover .dropdown {
-  display: block;
-}
-
-.mode-toggle {
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.mode-square {
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  background-color: #000;
-  transition: background-color 0.3s ease, border 0.3s ease;
-}
-
-/* === DEFAULT LIGHT MODE === */
-section {
-  padding: 2rem;
-}
-footer {
-  background-color: #f1f1f1;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  color: #333;
-}
-button,
-input,
-textarea {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  font-family: inherit;
-  font-size: 1rem;
-}
-
-/* === DARK MODE: FULL TERMINAL STYLE === */
-body.dark-mode {
-  background-color: #000;
-  color: #39ff14;
-  font-family: 'Courier New', Courier, monospace;
-  background-image: none;
-}
-
-/* Terminal Links */
-body.dark-mode a {
-  color: #00ff99;
-  border-bottom: 1px dashed #00ff99;
-}
-body.dark-mode a:hover {
-  color: #39ff14;
-  border-color: #39ff14;
-}
-
-/* Terminal Navbar */
-body.dark-mode .navbar {
-  background-color: #0a0a0a;
-  border-bottom: 1px solid #00ff99;
-}
-body.dark-mode .navbar a {
-  color: #00ff99;
-}
-
-/* Toggle Square */
-body.dark-mode .mode-square {
-  background-color: #00ff99;
-  border: 1px solid #00ff99;
-}
-
-/* Terminal Sections */
-body.dark-mode section {
-  border-left: 3px solid #00ff99;
-  padding-left: 1rem;
-}
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3 {
-  color: #00ff99;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* Terminal Buttons */
-body.dark-mode button,
-body.dark-mode .btn {
-  background-color: #000;
-  color: #00ff99;
-  border: 1px solid #00ff99;
-}
-body.dark-mode button:hover,
-body.dark-mode .btn:hover {
-  background-color: #00ff99;
-  color: #000;
-}
-
-/* Terminal Inputs */
-body.dark-mode input,
-body.dark-mode textarea {
-  background-color: #000;
-  color: #00ff99;
-  border: 1px solid #00ff99;
-}
-
-.hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-.bg-video {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  filter: brightness(0.3);
-}
-.hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
-
-/* Terminal Footer */
-body.dark-mode footer {
-  background-color: #0a0a0a;
-  border-top: 1px solid #00ff99;
-  color: #00ff99;
-}
-
-/* Cursor (optional) */
-.terminal-cursor {
-  display: inline-block;
-  width: 10px;
-  height: 20px;
-  background: #39ff14;
-  margin-left: 5px;
-  animation: blink 1s step-start infinite;
-}
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Computer-Kurse Mainz. Alle Rechte vorbehalten.</p>
+  </footer>
+</body>
+</html>
