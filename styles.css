@@ -91,7 +91,7 @@ body {
 .hero-text {
   position: relative;
   top: 40%;
-  text-align: center;
+  text-align: flex-start;
   color: white;
   padding: 0 1rem;
 }
