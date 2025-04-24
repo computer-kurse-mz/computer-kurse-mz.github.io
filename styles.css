@@ -328,3 +328,19 @@ a:not(.logo):hover::before {
     display: flex;
   }
 }
+
+body.dark-mode .nav-links.open a {
+  color: black !important;
+}
+
+body.dark-mode .nav-links a {
+  color: #39ff14; /
+}
+
+body:not(.dark-mode) .nav-links a {
+  color: #39ff14;
+}
+
+body.dark-mode .nav-links a {
+  color: #39ff14;
+}
