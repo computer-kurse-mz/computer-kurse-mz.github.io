@@ -286,22 +286,22 @@ a {
 }
 
 @media (hover: hover) {
-  a:not(.logo)::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background: rgba(57, 255, 20, 0.5);
-    z-index: -1;
-    transition: width 0.4s ease;
-    border-radius: 4px;
-  }
+a:not(.logo)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: rgba(57, 255, 20, 0.5);
+  z-index: -1;
+  transition: width 0.4s ease;
+  border-radius: 4px;
+}
 
-  a:not(.logo):hover::before {
-    width: 100%;
-  }
+a:not(.logo):hover::before {
+  width: 100%;
+}
 }
 
 /* === MOBILE NAVIGATION === */
