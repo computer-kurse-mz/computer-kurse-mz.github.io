@@ -314,7 +314,7 @@ a:not(.logo):hover::before {
     position: absolute;
     top: 100%;
     right: 1rem;
-    background: #fff;
+    background: black;
     padding: 1rem;
     display: none;
     flex-direction: column;
