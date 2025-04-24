@@ -1,72 +1,152 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Computer-Kurse Mainz</title>
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
-</head>
-<body class="light-mode">
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">Computer-Kurse Mainz</div>
-    <ul class="nav-links">
-      <li><a href="#start">Start</a></li>
-      <li><a href="#bootcamp">Bootcamp</a></li>
-      <li><a href="#kurse">Kurse</a></li>
-      <li><a href="#mentor">Mentor</a></li>
-    </ul>
-    <button class="mode-toggle" aria-label="Modus wechseln" aria-pressed="false">
-      <span class="mode-square"></span>
-    </button>
-  </nav>
+/* === Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: monospace;
+  background: #f9f9f9;
+  color: #111;
+  transition: all 0.3s ease;
+}
 
-  <!-- Startseite mit Video -->
-  <section class="hero" id="start">
-    <video autoplay muted loop class="bg-video">
-      <source src="assets/videos/background.mp4" type="video/mp4">
-    </video>
-    <div class="hero-content">
-      <h1>Programmieren macht Spaß<span class="terminal-cursor"></span></h1>
-      <p>
-        ... und ich zeige dir, warum! Egal, ob du in den
-        <span class="bold">Ferien</span> kreativ coden möchtest oder
-        <span class="bold">regelmäßig online oder offline</span> lernen willst, hier findest du den passenden Kurs.
-        Außerdem biete ich <span class="bold">kostenlose Aufklärungsstunden</span> für Schulklassen an,
-        damit alle einen smarten Einstieg in die digitale Welt bekommen.
-      </p>
-    </div>
-  </section>
+/* === Navbar === */
+.navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
 
-  <!-- Bootcamp Section -->
-  <section id="bootcamp">
-    <h2>Bootcamp</h2>
-    <p>Lerne in kurzer Zeit die wichtigsten digitalen Skills.</p>
-  </section>
+/* === Toggle Button === */
+.mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+}
+.mode-square {
+  width: 20px;
+  height: 20px;
+  background-color: #000;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, border 0.3s ease;
+  display: inline-block; /* <- wichtig */
+}
 
-  <!-- Kurse Section -->
-  <section id="kurse">
-    <h2>Kurse</h2>
-    <div id="praesenz">
-      <h3>Präsenz-Kurse</h3>
-      <p>Vor Ort in Mainz mit persönlicher Betreuung.</p>
-    </div>
-    <div id="online">
-      <h3>Online-Kurse</h3>
-      <p>Flexibles Lernen von überall aus.</p>
-    </div>
-  </section>
+/* === Hero === */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.bg-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4);
+  z-index: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  top: 40%;
+  transform: translateY(-40%);
+}
 
-  <!-- Mentor Section -->
-  <section id="mentor">
-    <h2>Dein Mentor</h2>
-    <p>Erfahrene Coaches begleiten dich auf deinem Weg.</p>
-  </section>
+.hero-content h1 {
+  font-size: clamp(2rem, 8vw, 5rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: #39ff14;
+  font-weight: bolder;
+}
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Computer-Kurse Mainz. Alle Rechte vorbehalten.</p>
-  </footer>
-</body>
-</html>
+.hero-content p {
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  line-height: 1.5;
+}
+
+/* === Cursor === */
+.terminal-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 20px;
+  background: #39ff14;
+  margin-left: 5px;
+  animation: blink 1s step-start infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* === Sections === */
+section {
+  padding: 3rem 2rem;
+}
+footer {
+  background: #f1f1f1;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* === DARK MODE === */
+body.dark-mode {
+  background: #000;
+  color: #39ff14;
+}
+body.dark-mode .navbar {
+  background: #0a0a0a;
+  border-bottom: 1px solid #39ff14;
+}
+body.dark-mode .nav-links a {
+  color: #39ff14;
+}
+body.dark-mode .mode-square {
+  background: #39ff14;
+  border: 1px solid #39ff14;
+}
+body.dark-mode section {
+}
+body.dark-mode footer {
+  background: #0a0a0a;
+  color: #39ff14;
+  border-top: 1px solid #39ff14;
+}
+
+/* === Terminal-Style Links === */
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+}
+
+a:hover {
+  border-bottom-style: dashed;
+}
