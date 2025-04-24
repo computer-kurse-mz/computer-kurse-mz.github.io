@@ -1,9 +1,10 @@
-/* === Reset === */
+/* === RESET === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: monospace;
   background: #f9f9f9;
@@ -11,28 +12,28 @@ body {
   transition: all 0.3s ease;
 }
 
-/* === Grundtypografie === */
+/* === TYPOGRAFIE === */
 p {
-  font-size: 1.125rem; /* = ca. 18px */
+  font-size: 1.125rem;
   line-height: 1.6;
 }
 
 h1 {
-  font-size: 2.5rem;   /* ca. 40px */
+  font-size: 2.5rem;
   line-height: 1.2;
 }
 
 h2 {
-  font-size: 2rem;     /* ca. 32px */
+  font-size: 2rem;
   line-height: 1.3;
 }
 
 h3 {
-  font-size: 1.5rem;   /* ca. 24px */
+  font-size: 1.5rem;
   line-height: 1.4;
 }
 
-/* === Navbar === */
+/* === NAVBAR === */
 .navbar {
   position: sticky;
   top: 0;
@@ -79,31 +80,11 @@ h3 {
 
 @media (max-width: 600px) {
   .nav-links a {
-    font-size: 1rem; /* ≈ 16px */
+    font-size: 1rem;
   }
 }
 
-/* === Toggle Button === */
-.mode-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mode-circle {
-  width: 24px;
-  height: 24px;
-  background-color: #000;
-  border-radius: 50%;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3); /* heller Schatten */
-  transition: box-shadow 0.3s ease, background-color 0.3s ease;
-}
-
-/* Hover-Effekt für beide Modi */
+/* === TOGGLE-BUTTON === */
 .mode-toggle {
   background: none;
   border: none;
@@ -117,42 +98,57 @@ h3 {
   z-index: 1001;
 }
 
+.mode-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #222; /* Light Mode */
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.mode-toggle:hover .mode-circle {
+  box-shadow: 0 0 10px 2px #39ff14;
+}
+
 .mode-toggle:active .mode-circle {
   transform: scale(0.85);
   box-shadow: 0 0 12px 3px #39ff14;
 }
 
-.mode-circle {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background-color: #222; /* Für Light Mode */
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-}
-
-/* Hover-Grün */
-.mode-toggle:hover .mode-circle {
-  box-shadow: 0 0 10px 2px #39ff14;
-}
-
 /* === DARK MODE === */
+body.dark-mode {
+  background: #000;
+  color: #39ff14;
+}
+
+body.dark-mode .navbar {
+  background: #0a0a0a;
+  border-bottom: 1px solid #39ff14;
+}
+
+body.dark-mode .nav-links a {
+  color: #39ff14;
+}
+
 body.dark-mode .mode-circle {
-  background-color: #fff; /* Weiß für Sichtbarkeit auf Schwarz */
+  background-color: #fff;
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
 }
 
-/* DARK MODE */
-body.dark-mode .mode-circle {
-  background-color: #fff; /* Weißer Kreis im dunklen Hintergrund */
+body.dark-mode footer {
+  background: #0a0a0a;
+  color: #39ff14;
+  border-top: 1px solid #39ff14;
 }
 
-/* === Hero === */
+/* === HERO SECTION === */
 .hero {
   position: relative;
   height: 100vh;
   overflow: hidden;
 }
+
 .bg-video {
   position: absolute;
   top: 0; left: 0;
@@ -162,16 +158,30 @@ body.dark-mode .mode-circle {
   filter: brightness(0.4);
   z-index: 0;
 }
+
+.video-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: 1;
+}
+
+body.dark-mode .video-overlay {
+  background-color: transparent;
+}
+
 .hero-content {
   position: relative;
-  z-index: 1;
-  color: white;
+  z-index: 2;
   text-align: center;
   padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
   top: 40%;
   transform: translateY(-40%);
+  color: white;
 }
 
 .hero-content h1 {
@@ -190,9 +200,9 @@ body.dark-mode .mode-circle {
 .hero-content::after {
   content: "";
   display: block;
-  height: 6px; /* Höhe des Balkens */
-  margin: 1.5rem auto 0 auto; /* Abstand zur Headline/Text */
-  width: 80%; /* Breite, anpassen wenn nötig */
+  height: 6px;
+  margin: 1.5rem auto 0 auto;
+  width: 80%;
   background: linear-gradient(to right, #39ff14 0%, transparent 100%);
 }
 
@@ -200,7 +210,7 @@ body:not(.dark-mode) .hero-content p {
   color: #111;
 }
 
-/* === Cursor === */
+/* === TERMINAL CURSOR === */
 .terminal-cursor {
   display: inline-block;
   width: 14px;
@@ -209,16 +219,18 @@ body:not(.dark-mode) .hero-content p {
   margin-left: 5px;
   animation: blink 1s step-start infinite;
 }
+
 @keyframes blink {
   50% {
     opacity: 0;
   }
 }
 
-/* === Sections === */
+/* === SECTIONS & FOOTER === */
 section {
   padding: 3rem 2rem;
 }
+
 footer {
   background: #f1f1f1;
   text-align: center;
@@ -227,43 +239,20 @@ footer {
   color: #333;
 }
 
-/* === DARK MODE === */
-body.dark-mode {
-  background: #000;
-  color: #39ff14;
-}
-body.dark-mode .navbar {
-  background: #0a0a0a;
-  border-bottom: 1px solid #39ff14;
-}
-body.dark-mode .nav-links a {
-  color: #39ff14;
-}
-body.dark-mode .mode-square {
-  background-color: #fff;
-  border: 1px solid #fff;
-}
-
-body.dark-mode footer {
-  background: #0a0a0a;
-  color: #39ff14;
-  border-top: 1px solid #39ff14;
-}
-
-/* === Basis für alle Links === */
+/* === LINKS MIT HIGHLIGHT-EFFEKT === */
 a {
   color: inherit;
   text-decoration: none;
   position: relative;
 }
 
-/* Logo-Link: Kein Hover-Effekt */
+/* Kein Hover für Logo */
 .logo {
   text-decoration: none;
   position: static;
 }
 
-/* === Slide-In Background Highlight === */
+/* Slide-In Highlight für alle anderen Links */
 a:not(.logo)::before {
   content: "";
   position: absolute;
@@ -271,7 +260,7 @@ a:not(.logo)::before {
   left: 0;
   width: 0%;
   height: 100%;
-  background: rgba(0, 255, 153, 0.2); /* oder eine passendere Farbe */
+  background: rgba(57, 255, 20, 0.5);
   z-index: -1;
   transition: width 0.4s ease;
   border-radius: 4px;
@@ -279,19 +268,4 @@ a:not(.logo)::before {
 
 a:not(.logo):hover::before {
   width: 100%;
-}
-
-/* === Video Overlay === */
-.video-overlay {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1; /* liegt über dem Video, aber unter dem Text */
-  background-color: rgba(255, 255, 255, 0.6); /* Light Mode: 50% Weiß */
-}
-
-/* Dark Mode: transparent (kein Overlay sichtbar) */
-body.dark-mode .video-overlay {
-  background-color: transparent;
 }
