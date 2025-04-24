@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const toggleButton = document.querySelector('.mode-toggle');
   const video = document.querySelector('.bg-video');
-
   const savedMode = localStorage.getItem('mode');
   const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -18,10 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (video) {
     video.playbackRate = 0.4;
   }
-});
 
-// Burger-Menü
-function toggleMenu() {
+  // Burger-Menü
+  const burger = document.querySelector('.burger');
   const navLinks = document.querySelector('.nav-links');
-  navLinks.classList.toggle('open');
-}
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+});
