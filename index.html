@@ -10,16 +10,18 @@
 <body>
   <!-- Navbar -->
   <nav class="navbar">
-    <h1 class="logo">Computer-Kurse Mainz</h1>
-    <ul class="nav-links">
-      <li><a href="#start">Start</a></li>
-      <li><a href="#bootcamp">Bootcamp</a></li>
-      <li><a href="#kurse">Kurse</a></li>
-      <li><a href="#mentor">Mentor</a></li>
-    </ul>
-    <button class="mode-toggle" aria-label="Modus wechseln">
-      <span class="mode-square"></span>
-    </button>
+    <a href="#start" class="logo">Computer-Kurse Mainz</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#start">Start</a></li>
+        <li><a href="#bootcamp">Bootcamp</a></li>
+        <li><a href="#kurse">Kurse</a></li>
+        <li><a href="#mentor">Mentor</a></li>
+      </ul>
+      <button class="mode-toggle" onclick="toggleMode()">
+        <span class="mode-circle"></span>
+      </button>
+    </div>
   </nav>
 
   <!-- Hero Section -->
@@ -27,6 +29,7 @@
     <video class="bg-video" autoplay muted loop>
       <source src="assets/videos/background.mp4" type="video/mp4" />
     </video>
+    <div class="video-overlay"></div>
     <div class="hero-content">
       <h1>Programmieren macht Spaß<span class="terminal-cursor"></span></h1>
       <p>
