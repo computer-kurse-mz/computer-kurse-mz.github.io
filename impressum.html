@@ -1,51 +1,67 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <link rel="security" href="/well-known/security.txt" type="text/plain">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), geolocation=(), microphone=(), payment=(), usb=()">
+  <meta name="description" content="Computer-Kurse Mainz bieten intensive Coding Bootcamps, Kurse und Mentoring für deinen Start in die Welt der Computer.">
+  <meta name="keywords" content="coding, bootcamp, programmieren lernen">
+  <meta name="author" content="Computer-Kurse Mainz">
+  <title>Impressum // Computer-Kurse Mainz</title>
   <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
-  <link rel="manifest" href="assets/icons/site.webmanifest">
-  <link rel="stylesheet" href="styles.css"/>
-  <script defer src="script.js"></script>
-  <title>Computer-Kurse Mainz</title>
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="preload" href="script.js" as="script">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar">
-      <a href="#start" class="logo">Computer-Kurse Mainz</a>
-      <div class="nav-right">
-        <button class="burger" aria-label="Menü umschalten" onclick="toggleMenu()">
-          <div></div>
-          <div></div>
-          <div></div>
+  <header>
+    <nav class="navbar" aria-label="Hauptnavigation">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <div>
+            <pre>
+|C|o|m|p|u|t|e|r|-|K|u|r|s|e|
+<strong> M A I N Z</strong>
+            </pre>
+        </div>
+        </a>
+        <div class="nav-links" id="navLinks" aria-labelledby="menuToggle">
+          <button id="menuCloseBtn" class="menu-close" aria-label="Menü schließen">&times;</button>
+          <a href="index.html#bootcamp">Bootcamp</a>
+          <a href="index.html#kurse">Kurse</a>
+          <a href="index.html#mentor">Mentor</a>
+          <a href="index.html#kontakt">Kontakt</a>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-pressed="false" aria-label="Zum Dark Mode wechseln">
+          <span class="toggle-circle"></span>
         </button>
-        <ul class="nav-links">
-          <li><a href="#bootcamp">Bootcamp</a></li>
-          <li><a href="#kurse">Kurse</a></li>
-          <li><a href="#mentor">Mentor</a></li>
-        </ul>
-        <button class="mode-toggle" aria-label="Dark Mode umschalten">
-          <span class="mode-circle"></span>
-        </button>
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-label="Menü öffnen/schließen" aria-controls="navLinks">☰</button>
       </div>
     </nav>
+  </header>
 
+  <main id="main-content" tabindex="-1">
     <h1>Impressum</h1>
     <h2>Computer-Kurse Mainz</h2>
     <p>Tim Fongern</p>
     <p>Karlsbader Straße 22, 55122 Mainz</p>
     <p>E-Mail: <a href="mailto:computer.kurse.mz@gmail.com" >computer.kurse.mz@gmail.com</a>, <a href="https://keys.openpgp.org/vks/v1/by-fingerprint/25CC76D315EF4B6CFE37CE6C9F8533A01C5CCED6">PGP-Key</a> (Fingerprint: 25CC 76D3 15EF 4B6C FE37 CE6C 9F85 33A0 1C5C CED6)</p>
     <p>Telefon: 015221934204</p>
-    
+
     <h2>Urheberrecht</h2>
     <p>Das Urheberrecht an dem Inhalt dieser Webseite oder Teilen davon steht Tim Fongern oder demjenigen zu, dem Tim Fongern ein entsprechendes Nutzungsrecht eingeräumt hat. Einzelne Seiten dieser Webseite dürfen zum ausschließlich privatem Gebrauch heruntergeladen, vorübergehend gespeichert und gedruckt werden. Jede andere Vervielfältigung, Übertragung oder Verbreitung jeglichen Inhalts dieser Webseite, insbesondere durch Herunterladen, Speichern oder Drucken ist ohne die ausdrückliche Einwilligung von Tim Fongern verboten. Anfragen hierzu richten Sie bitte an computer.kurse.mz@gmail.com.</p>
-    
+
     <h2>Information und Haftungsausschluss</h2>
     <p>Es wurden alle Anstrengungen unternommen, um die Richtigkeit der auf diesen Webseiten enthaltenen Informationen und Links zu gewährleisten. Jedoch ist jegliche Haftung im Zusammenhang mit der Nutzung der Informationen, der Links oder dem Vertrauen auf deren Richtigkeit ausgeschlossen.</p>
-    
+
     <h2>Sicherheit</h2>
     <p>Informationen zur Meldung von Sicherheitslücken finden Sie in unserer <a href="well-known/security.txt" target="_blank">security.txt</a>.</p>
 
@@ -58,9 +74,12 @@
       <!-- <li>Bilder: [kommen noch]</li> -->
       <li>Webseite: <a href="https://january1073.github.io/" target="_blank">january1073</a></li>
     </ul>
+  </main>
 
-    <footer>
-      <p>&copy; 2025 Tim Fongern | <a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</p>
-    </footer>
+  <footer>
+    &copy; 2025 Tim Fongern | <a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</a>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

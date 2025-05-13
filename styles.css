@@ -90,14 +90,12 @@ header {
   overflow: hidden;
 }
 
-/* Hover-Farbe bleibt bestehen */
-.nav-links a:hover, 
+.nav-links a:hover,
 .nav-links a:focus {
   color: var(--secondary-color);
   outline: none;
 }
 
-/* HOVER-EFFEKT: animierte Unterstreichung */
 .nav-links a::before {
   content: "";
   position: absolute;
@@ -237,7 +235,6 @@ header {
   font-size: 1.1rem;
 }
 
-/* Content Sections */
 .content-section {
   padding: 2.5rem 1rem 2rem 1rem;
   max-width: 1200px;
@@ -308,7 +305,7 @@ figcaption {
   border: 1px solid var(--border-color);
 }
 
-.course-card:hover, 
+.course-card:hover,
 .course-card:focus-within {
   box-shadow: 0 4px 12px var(--shadow-color);
   transform: translateY(-2px);
@@ -336,12 +333,11 @@ footer {
   border-top: 1px solid var(--border-color);
 }
 
-/* Dark Mode */
 body.dark-mode {
-  --primary-color: #fff;
+  --primary-color: #00ff00;
   --secondary-color: #666;
   --bg-color: #000;
-  --text-color: #fff;
+  --text-color: #00ff00;
   --toggle-bg: #fff;
   --card-bg: #111;
   --footer-bg: #111;
