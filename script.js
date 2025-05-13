@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Element selections
-  const themeToggle = document.getElementById('themeToggle');
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
   const menuCloseBtn = document.getElementById('menuCloseBtn');
   const navLinkItems = document.querySelectorAll('.nav-links a');
-  const body = document.body;
   const mainContent = document.getElementById('main-content');
   const skipLink = document.querySelector('.skip-to-content');
 
@@ -17,22 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
       mainContent.scrollIntoView({behavior: 'smooth'});
     });
   }
-
-  // Theme toggle functionality
-  if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark-mode');
-  }
-
-  themeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    const isDarkMode = body.classList.contains('dark-mode');
-    
-    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-    
-    // Update ARIA attributes
-    themeToggle.setAttribute('aria-pressed', isDarkMode);
-    themeToggle.setAttribute('aria-label', isDarkMode ? 'Zum Light Mode wechseln' : 'Zum Dark Mode wechseln');
-  });
 
   // Mobile menu functionality
   const openMenu = () => {
@@ -79,8 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Close menu when clicking outside
   document.addEventListener('click', (event) => {
-    if (navLinks.classList.contains('open') && 
-        !event.target.closest('#navLinks') && 
+    if (navLinks.classList.contains('open') &&
+        !event.target.closest('#navLinks') &&
         !event.target.closest('#menuToggle')) {
       closeMenu();
     }
@@ -97,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.shiftKey && document.activeElement === firstElement) {
         e.preventDefault();
         lastElement.focus();
-      } 
+      }
       // If tab on last element, move to first
       else if (!e.shiftKey && document.activeElement === lastElement) {
         e.preventDefault();
