@@ -1,6 +1,6 @@
-Contact: mailto:computer.kurse.mz@gmail.com
+Contact: mailto:january1073@proton.me
 Expires: 2025-12-31T22:59:00.000Z
-Encryption: https://keys.openpgp.org/vks/v1/by-fingerprint/25CC76D315EF4B6CFE37CE6C9F8533A01C5CCED6
-Preferred-Languages: en, de
-Canonical: https://computer-kurse-mz.github.io/well-known/security.txt
-Policy: https://github.com/computer-kurse-mz/computer-kurse-mz.github.io/SECURITY.md
+Encryption: https://keys.openpgp.org/vks/v1/by-fingerprint/56F2FDCC2EF4D52A3F597815AE34888E8EDC586C
+Preferred-Languages: en, zh-CN, de
+Canonical: https://january1073.github.io/well-known/security.txt
+Policy: https://january1073.github.io/SECURITY.md

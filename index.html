@@ -1,81 +1,161 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <link rel="security" href="/well-known/security.txt" type="text/plain">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), geolocation=(), microphone=(), payment=(), usb=()">
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Computer-Kurse Mainz bieten intensive Coding Bootcamps, Kurse und Mentoring für deinen Start in die Welt der Computer.">
+  <meta name="keywords" content="coding, bootcamp, programmieren lernen">
+  <meta name="author" content="Computer-Kurse Mainz">
+  
+  <title>Computer-Kurse Mainz</title>
+  
+  <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
-  <link rel="manifest" href="assets/icons/site.webmanifest">
-  <link rel="stylesheet" href="styles.css"/>
-  <script defer src="script.js"></script>
-  <title>Computer-Kurse Mainz</title>
+  <link rel="manifest" href="site.webmanifest">
+  
+  <!-- Preload critical assets -->
+  <link rel="preload" href="assets/videos/background.mp4" as="video" type="video/mp4">
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="preload" href="script.js" as="script">
+  
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <a href="#start" class="logo">Computer-Kurse Mainz</a>
-    <div class="nav-right">
-      <button class="burger" aria-label="Menü umschalten" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </button>
-      <ul class="nav-links">
-        <li><a href="#bootcamp">Bootcamp</a></li>
-        <li><a href="#kurse">Kurse</a></li>
-        <li><a href="#mentor">Mentor</a></li>
-      </ul>
-      <button class="mode-toggle" aria-label="Dark Mode umschalten">
-        <span class="mode-circle"></span>
-      </button>
-    </div>
-  </nav>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-to-content">Zum Inhalt springen</a>
+  
+  <header>
+    <nav class="navbar" aria-label="Hauptnavigation">
+      <div class="nav-container">
+        <a href="#" class="logo">
+          <div>
+            <pre>
+|C|o|m|p|u|t|e|r|-|K|u|r|s|e|
+<strong> M A I N Z</strong>
+            </pre>
+        </div>
+        </a>
+        <div class="nav-links" id="navLinks" aria-labelledby="menuToggle">
+          <button id="menuCloseBtn" class="menu-close" aria-label="Menü schließen">&times;</button>
+          <a href="#bootcamp">Bootcamp</a>
+          <a href="#kurse">Kurse</a>
+          <a href="#mentor">Mentor</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-pressed="false" aria-label="Zum Dark Mode wechseln">
+          <span class="toggle-circle"></span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-label="Menü öffnen/schließen" aria-controls="navLinks">☰</button>
+      </div>
+    </nav>
+  </header>
 
-  <!-- Hero Section -->
-  <section id="start" class="hero">
-    <video class="bg-video" autoplay muted loop>
-      <source src="assets/videos/background.mp4" type="video/mp4" />
-    </video>
-    <div class="video-overlay"></div>
-    <div class="hero-content">
-      <h1>>_Programmieren macht Spaß <span class="terminal-cursor"></span></h1>
-      <p>
-        ... und ich zeige dir, warum! Egal, ob du in den <strong>Ferien</strong> kreativ coden möchtest oder <strong>regelmäßig online oder offline</strong> lernen willst – hier findest du den passenden Kurs. Außerdem biete ich <strong>kostenlose Aufklärungsstunden</strong> für Schulklassen an.
-      </p>
-    </div>
-  </section>
-
-  <!-- Bootcamp Section -->
-  <section id="bootcamp">
-    <h2>Bootcamp</h2>
-    <p>Lerne in kurzer Zeit die wichtigsten digitalen Skills.</p>
-  </section>
-
-  <!-- Kurse -->
-  <section id="kurse">
-    <h2>Kurse</h2>
-    <div>
-      <h3>Präsenz-Kurse</h3>
-      <p>Vor Ort in Mainz mit persönlicher Betreuung.</p>
-    </div>
-    <div>
-      <h3>Online-Kurse</h3>
-      <p>Flexibles Lernen von überall aus.</p>
+  <section class="start-section">
+    <div class="video-overlay" aria-hidden="true"></div>
+    <div class="start-content">
+      <h1>Programmieren macht Spaß</h1>
+      <p>... und ich zeige dir, warum! Egal, ob du in den Ferien kreativ coden möchtest oder regelmäßig lernen willst, hier findest du den passenden Kurs. Außerdem biete ich kostenlose Aufklärungsstunden für Schulklassen an, damit alle einen smarten Einstieg in die digitale Welt bekommen.</p>
     </div>
   </section>
 
-  <!-- Mentor -->
-  <section id="mentor">
-    <h2>Dein Mentor</h2>
-    <p>Erfahrene Coaches begleiten dich auf deinem Weg.</p>
-  </section>
+  <main id="main-content" tabindex="-1">
+    <section id="bootcamp" class="content-section">
+      <h2>Bootcamp</h2>
+      <div class="grid-container">
+        <div class="figure-container">
+          <figure>
+            <img src="assets/images/bootcamp2.png" alt="Teilnehmer im Bootcamp arbeiten gemeinsam an Coding-Projekten">
+            <figcaption>Bootcamp</figcaption>
+          </figure>
+        </div>
+        <article class="text-content">
+          <p><strong>Das Oster-Bootcamp 2025 ist gerade vorbei ...</strong></p>
+          <p>Während der Ferien veranstalte ich regelmäßig Bootcamps.</p>
+          <p>Dabei kann man in einer kleinen Gruppe ein paar Tage intensiv in ein Thema einsteigen oder seine Skills verbessern.</p>
+          <p>Gerade fand in den Osterferien das viertägige Bootcamp "Webseiten-Bastler: Baue Deine eigene Homepage!" statt.</p>
+          <p>Sobald Thema und Termin für das nächste Bootcamp stehen, wird es hier dazu mehr Infos geben. Wenn du immer auf dem Laufenden sein willst, trage dich einfach in meinen <strong>Newsletter [LINK]</strong> ein.</p>
+        </article>
+      </div>
+    </section>
 
-  <!-- Footer -->
+    <section id="kurse" class="content-section">
+      <h2>Kurse</h2>
+      <div class="course-grid">
+        <article class="course-card">
+          <h3>Präsenz-Kurse</h3>
+          <figure>
+            <img src="assets/images/praesenz.png" alt="Laptop mit HTML-Code auf dem Bildschirm">
+            <figcaption>Frontend & Backend</figcaption>
+          </figure>
+        </article>
+        <article class="course-card">
+          <h3>Online-Kurse</h3>
+          <figure>
+            <img src="assets/images/online.png" alt="Datenvisualisierung auf einem Monitor">
+            <figcaption>Python & ML Grundlagen</figcaption>
+          </figure>
+        </article>
+        <article class="course-card">
+          <h3>Schulklassen</h3>
+          <figure>
+            <img src="assets/images/schule2.png" alt="Smartphone mit App-Design">
+            <figcaption>iOS & Android</figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <section id="mentor" class="content-section">
+      <h2>Mentor</h2>
+      <div class="grid-container">
+        <div class="figure-container">
+          <figure>
+            <img src="assets/images/tim.png" alt="Mentor erklärt einem Studenten Code-Details">
+            <figcaption>Tim Fongern</figcaption>
+          </figure>
+        </div>
+        <article class="text-content">
+          <p>Eigentlich bin ich Anwalt, ...</p>
+          <p>... doch eines meiner größten Hobbies ist die Arbeit mit Computern. Lange bevor ich wusste, was Gesetze sind, hatte ich mein erstes kleines Computerprogramm mit BASIC geschrieben. Ältere Besucher dieser Webseite werden sich vielleicht noch an diese Computersprache erinnern können.</p>
+          <p>Seither habe ich mich in meiner Freizeit stets weiter mit Computern beschäftigt, insbesondere mit Computernetzwerken, verschiedenen Betriebssystemen, und Programmierung. Heute befasse ich mich insbesondere - auch als Anwalt - mit den Themen "Cybersecurity", "Cloud Computing" und "künstliche Intelligenz".</p>
+          <p>In meiner Freizeit gebe ich mein Wissen gerne weiter. Als Vater von zwei Kindern - die Ältere ist gerade beim "ablativus absolutus", der Jüngere bei "Tonnen, Kilogramm und Gramm" - habe ich mir auch gewisse didaktische Fähigkeiten angeeignet.</p>
+          <p>Ich würde mich freuen, wenn du Interesse an einem meiner Computer-Kurse hast. Für Schulklassen biete ich, wenn es zeitlich passt, kostenlose Aufklärungsstunden zu sicherem Surfen im Internet, Schutz gegen Hacker, oder ChatGPT & Co.</p>
+          <a href="mailto:computer.kurse.mz@gmail.com">Schreib' mir einfach!</a>
+        </article>
+      </div>
+    </section>
+    
+    <section id="kontakt" class="content-section">
+      <h2>Kontakt</h2>
+      <div class="grid-container">
+        <address class="text-content">
+          <p><strong>Tech Academy GmbH</strong><br>
+          Musterstraße 123<br>
+          10115 Berlin</p>
+          <p>E-Mail: <a href="mailto:info@tech-academy.de">info@tech-academy.de</a><br>
+          Tel: <a href="tel:+4930123456789">+49 30 123 456 789</a></p>
+        </address>
+        <div class="text-content">
+          <p>Hast du Fragen zu unseren Angeboten? Kontaktiere uns oder besuche eine unserer kostenlosen Info-Sessions jeden Donnerstag um 18 Uhr online.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer>
-    <p>&copy; 2025 Tim Fongern | <a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</p>
+    <p>&copy; 2025 Tech Academy | <a href="#datenschutz">Datenschutz</a> | <a href="#impressum">Impressum</a></p>
   </footer>
+  
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,8 +1,8 @@
 # Security Policy
 ## Reporting Vulnerabilities
 Please email security issues to:  
-**computer.kurse.mz@gmail.com**  
-PGP: [25CC 76D3 15EF 4B6C FE37 CE6C 9F85 33A0 1C5C CED6](https://keys.openpgp.org/vks/v1/by-fingerprint/25CC76D315EF4B6CFE37CE6C9F8533A01C5CCED6)
+**january1073@proton.me**  
+PGP: [56F2 FDCC 2EF4 D52A 3F59 7815 AE34 888E 8EDC 586C](https://keys.openpgp.org/vks/v1/by-fingerprint/56F2FDCC2EF4D52A3F597815AE34888E8EDC586C)
 
 ## Disclosure Policy
 - Expect response within 72 hours
